@@ -13,7 +13,7 @@ import random
 '''
 
 
-class FibonacciActionServer(Node):
+class RandomNumberActionServer(Node):
 
     def __init__(self):
         super().__init__('random_number_action_server')
@@ -48,8 +48,8 @@ class FibonacciActionServer(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    fibonacci_action_server = FibonacciActionServer()
-    rclpy.spin(fibonacci_action_server)
+    random_number_action_server = RandomNumberActionServer()
+    rclpy.spin(random_number_action_server)
 
 
 if __name__ == '__main__':
