@@ -1,6 +1,7 @@
 import rclpy
 from rclpy.action import ActionClient
 from rclpy.node import Node
+import sys
 
 from randomnumberactioninterface.action import RandomNumber
 
@@ -46,8 +47,11 @@ class RandomNumberActionClient(Node):
 
 def main(args=None):
     rclpy.init(args=args)
+    print('len(sys.argv) : ', len(sys.argv))
+    num1 = int(sys.argv[1])
+    num2 = int(sys.argv[2])
     action_client = RandomNumberActionClient()
-    action_client.send_goal(1,10)
+    action_client.send_goal(num1,num2)
     rclpy.spin(action_client)
 
 
